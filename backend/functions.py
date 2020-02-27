@@ -24,5 +24,5 @@ def create_order(symbol, qty, side, type, time_in_force):
     r = requests.post(ORDERS_URL, json=data, headers=HEADERS)
     return json.loads(r.content)
 
-response = create_order("AAPL", 100, "buy", "market", "gtc")
+response = get_account()
 print(response)
