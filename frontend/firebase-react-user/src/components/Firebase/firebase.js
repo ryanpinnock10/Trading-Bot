@@ -2,6 +2,9 @@ import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
+/**
+ * Use of Firebase Authenticator API
+ */
 
 const config = {
   apiKey: "AIzaSyB_RI0rSqGbcX4Nz5iDF94_ZzsKVi6UP88",
