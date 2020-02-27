@@ -23,8 +23,9 @@ def create_order(symbol, qty, side, type, time_in_force):
 
     }
     r = requests.post(ORDERS_URL, json=data, headers=HEADERS)
-    return json.loads(r.content)
-
-response = get_account()
+    info = json.loads(r.content)
+    return info["status"], info["client_order_id"], info["symbol"], info["qty"], info["filled_avg_price"]
+    
+response = create_order("AAPL", 10, "buy", "market", "gtc")
 
 print(response)
