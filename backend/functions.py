@@ -1,4 +1,4 @@
-import alpaca_trade_api as tradeapi
+
 import requests, json
 from config import *
 
@@ -10,7 +10,8 @@ HEADERS = {"APCA-API-KEY-ID" : API_KEY, "APCA-API-SECRET-KEY" : SECRET_KEY}
 
 def get_account():
     r = requests.get(ACCOUNT_URL, headers=HEADERS)
-    return json.loads(r.content)
+    info = json.loads(r.content)
+    return info["account_number"], info["status"], info["cash"], info["equity"], info["last_equity"]
 
 def create_order(symbol, qty, side, type, time_in_force):
     data = {
@@ -24,5 +25,6 @@ def create_order(symbol, qty, side, type, time_in_force):
     r = requests.post(ORDERS_URL, json=data, headers=HEADERS)
     return json.loads(r.content)
 
-response = create_order("AAPL", 100, "buy", "market", "gtc")
+response = get_account()
+
 print(response)
