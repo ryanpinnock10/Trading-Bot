@@ -11,9 +11,10 @@ POSITIONS_URL = '{}/v2/positions'.format(BASE_URL)
 HEADERS = {"APCA-API-KEY-ID" : API_KEY, "APCA-API-SECRET-KEY" : SECRET_KEY}
 
 def get_account():
+    global account_info
     r = requests.get(ACCOUNT_URL, headers=HEADERS)
-    info = json.loads(r.content)
-    return info["account_number"], info["status"], info["cash"], info["equity"], info["last_equity"]
+    account_info = json.loads(r.content)
+    return account_info
 
 def create_order(symbol, qty, side, type, time_in_force):
     data = {
@@ -29,12 +30,13 @@ def create_order(symbol, qty, side, type, time_in_force):
     return info
     
 def get_orders():
+    global orders_info
     r = requests.get(POSITIONS_URL, headers=HEADERS)
-    info = json.loads(r.content)
-    return info
+    orders_info = json.loads(r.content)
+    return orders_info
 
 # response = create_order("AMD", 50, "buy", "market", "gtc")
 response2 = get_orders()
 
 # print(response)
-print(response2)
+# print(response2)

@@ -1,2 +1,3 @@
 API_KEY = "PKQBQNZ5UE5V81TGITGN"
 SECRET_KEY = "ceSxlGQPKbjEF37i2uywLE7AqXWjRMd/a7Sc7fOZ"
+client_order_id = ""
