@@ -1,5 +1,8 @@
 import alpaca_trade_api as tradeapi
-from .config import *
+# from .config import *
+API_KEY = "PKQBQNZ5UE5V81TGITGN"
+SECRET_KEY = "ceSxlGQPKbjEF37i2uywLE7AqXWjRMd/a7Sc7fOZ"
+
 
 conn = tradeapi.stream2.StreamConn()
 
