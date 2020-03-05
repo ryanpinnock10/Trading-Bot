@@ -1,6 +1,6 @@
 import json
 from firebase import firebase
-from .functions import *
+from functions import *
 
 FIREBASE_URL = "https://trade-bot-a7ed8.firebaseio.com/"
 firebase = firebase.FirebaseApplication(FIREBASE_URL, None)
@@ -14,4 +14,5 @@ def input_alpaca_orders():
     data = firebase.post('Orders', orders_info)
 
 
-input_alpaca_orders()
+# input_alpaca_data()
+# input_alpaca_orders()

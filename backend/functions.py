@@ -1,6 +1,6 @@
 
 import requests, json
-from .config import *
+from config import *
 
 
 BASE_URL = 'https://paper-api.alpaca.markets'
@@ -35,8 +35,10 @@ def get_orders():
     orders_info = json.loads(r.content)
     return orders_info
 
-# response = create_order("AMD", 10, "buy", "market", "gtc")
-response2 = get_orders()
+# response1 = get_account()
+# response2 = create_order("IBM", 10, "buy", "market", "gtc")
+# response3 = get_orders()
 
-# print(response)
-print(response2)
+# print(response1)
+# print(response2)
+# print(response3)
