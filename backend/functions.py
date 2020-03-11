@@ -47,21 +47,13 @@ def add_watchlist(name, symbol):
         "name":name, 
         "symbol":symbol
     }
-    r = requests.post(WATCHLIST_URL, header=HEADERS)
+    r = requests.post(WATCHLIST_URL, json=data, headers=HEADERS)
     add_watchlist_info = json.loads(r.content)
     return add_watchlist_info
 
-def watchlist_add(name, symbol):
-    data = {
-        "name":name, 
-        "symbol":symbol
-    }
-    r = requests.post(ADD_ASSET_URL, headers=HEADERS)
-    asset_info = json.loads(r.content)
-    return asset_info
 
-# response = watchlist_add("Test watchlist", 'IBM')
 response = view_watchlists()
+# response = add_watchlist("Test Watchlist", "'IBM', 'AMZN'")
 print(response)
 # -------------------------------tests-----------------------------------------
 # response1 = get_account()
