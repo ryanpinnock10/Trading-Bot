@@ -19,7 +19,7 @@ const Navigation = () => (
 );
 
 const NavigationAuth = ({ authUser }) => (
-  <ul>
+  <ul class = "horizontal">
     <li>
       <Link to={ROUTES.LANDING}>Landing</Link>
     </li>
