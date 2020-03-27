@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "terminal.integrated.shell.windows": "C:\\Installations\\Git\\bin\\bash.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true
+
+}

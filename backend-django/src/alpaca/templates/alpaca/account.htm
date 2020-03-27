@@ -1,0 +1,159 @@
+  
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="" rel="stylesheet"/>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <title>Trade Bot</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href=""><span class="blue">Paper Trading</span>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="">Account</a></li>
+                                <li><a href="">About</a></li>
+                                <li><a href="">History</a></li>
+                                <li><a href="">Search</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="">Log Out</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href=>Register</a></li>
+                                <li><a href=>Log In</a></li>
+                            </ul>
+
+                    </div>
+                </div>
+            </nav>
+
+            <section class="section">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-offset-4 is-4">
+                            <form method="POST">
+                                <!-- token -->
+                                <div class="field has-addons">
+                                    <div class="control is-expanded">
+                                        <!-- form -->
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-info">
+                                            Make Order
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- message -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <header>
+                    <div class="column is-offset-4 is-4">
+                        {% for account in account_data %}
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <span class="account">Account Number: {{ account.account_number }}</span>
+                                            <br>
+                                            <span class="buy_power">Buying Power: {{ account.buying_power }}</span>
+                                            <br> 
+                                            <span class="equity">Equity: {{ account.equity }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                </header>
+                <br>
+                    <div class="column is-offset-4 is-4">
+                        {% for position in positions_data %}
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <span class="account">Symbol: {{ position.symbol }}</span>
+                                            <span class="buy_power">Quantity: {{ position.qty }}</span>
+                                            <span class="equity">Bought Price: {{ position.bought_price }}</span>
+                                            <span class="equity">Current Price: {{ position.current_price }}</span>
+                                            <span class="equity">Change today: {{ position.change_today }}%</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <br>
+                    <div class="column is-offset-4 is-4">
+                        {% for watchlist in watchlist_data %}
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <span class="account">Watchlist Name: {{ watchlist.name }}</span>
+                                            <br>
+                                            <span class="account">Watchlist ID: {{ watchlist.id }}</span>
+                                            <br>                                           
+                                                {% for asset in asset_data %}
+                                                    <span class="asset">{{ asset.symbol }}</span>
+                                                    <br>      
+                                                {% endfor %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
+            <main>
+
+            </main>
+            
+        </div>
+
+    </body>
+
+</html>
