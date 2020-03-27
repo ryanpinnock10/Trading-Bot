@@ -7,7 +7,7 @@ import Messages from '../Messages';
 const HomePage = () => (
   <div>
     <h1>Portfolio</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
+    <p>The Portfolio Page is accessible by every signed in user.</p>
 
     <Messages />
   </div>
