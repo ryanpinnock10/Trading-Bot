@@ -22,8 +22,8 @@ def get_positions(request):
     POSITIONS_URL = '{}/v2/positions'.format(BASE_URL)
 
     r = requests.get(POSITIONS_URL, headers=HEADERS)
-    data = json.loads(r.content)
-    return Response(data)
+    data1 = json.loads(r.content)
+    return Response(data1)
 
 
 
