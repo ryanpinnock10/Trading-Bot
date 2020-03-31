@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.pythonPath": "/usr/local/bin/python3",
     "terminal.integrated.shell.windows": "C:\\Installations\\Git\\bin\\bash.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,

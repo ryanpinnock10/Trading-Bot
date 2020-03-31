@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^4.4.1",
+    "plotly.js": "^1.52.3",
+    "react-plotly.js": "^2.4.0"
   }
 }
