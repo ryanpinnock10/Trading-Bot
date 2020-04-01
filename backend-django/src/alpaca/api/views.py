@@ -26,4 +26,3 @@ def get_positions(request):
     return Response(data)
 
 
-
