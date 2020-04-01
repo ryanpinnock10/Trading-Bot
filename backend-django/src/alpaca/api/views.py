@@ -15,7 +15,7 @@ def get_account(request):
     data = json.loads(r.content)
     return Response(data)
     
-@api_view()
+@api_view(['GET', 'POST'])
 def get_positions(request):
     BASE_URL = 'https://paper-api.alpaca.markets'
     HEADERS = {"APCA-API-KEY-ID" : API_KEY, "APCA-API-SECRET-KEY" : SECRET_KEY}
@@ -24,6 +24,5 @@ def get_positions(request):
     r = requests.get(POSITIONS_URL, headers=HEADERS)
     data = json.loads(r.content)
     return Response(data)
-
 
 

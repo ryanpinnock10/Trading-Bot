@@ -1,12 +1,28 @@
-import StockChart from './stockGraph';
+import React from 'react';
+import { compose } from 'recompose';
+import WatchList from './watchlist';
+import OrderHistory from './OrderHistory';
+//import graphQ  from '../Portfolio/stockGraph';
 
-<<<<<<< HEAD
- const Landing = () => (
-   <div>
-     <h1>Landing</h1>
- 
-   </div>
- );
+import { withAuthorization, withEmailVerification } from '../Session';
+import Messages from '../Messages';
+
+const HomePage = () => (
+  <div>
+    <h1>Portfolio</h1>
+    <p>The Portfolio Page is accessible by every signed in user.</p>
+
+    <Messages />
+  </div>
+);
+
+const condition = authUser => !!authUser;
+
+export default compose(
+  withEmailVerification,
+  withAuthorization(condition),
+)(HomePage);
+
 
 export default Landing;
 import { Layout, Menu, Breadcrumb } from 'antd';
@@ -71,6 +87,3 @@ const mapDispatchToProps = dispatch => {
         logout: () => dispatch(actions.logout()) 
     }
 }
-=======
-export default StockChart;
->>>>>>> 1909123f61378bf0b29d6f1ae3652c10bb086b60
