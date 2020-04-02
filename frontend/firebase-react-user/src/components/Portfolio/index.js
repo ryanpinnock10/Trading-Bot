@@ -1,8 +1,6 @@
 import React from 'react';
 import { compose } from 'recompose';
-// import WatchList from '../Portfolio/watchlist';
-// import OrderHistory from '../Portfolio/OrderHistory';
-//import graphQ  from '../Portfolio/stockGraph';
+import OrderHistory from './orderHistory/index';
 
 import { withAuthorization, withEmailVerification } from '../Session';
 import Messages from '../Messages';
