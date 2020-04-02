@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose } from 'recompose';
-import OrderHistory from './orderHistory/index';
+//import OrderHistory from './orderHistory/index';
 
 import { withAuthorization, withEmailVerification } from '../Session';
 import Messages from '../Messages';
