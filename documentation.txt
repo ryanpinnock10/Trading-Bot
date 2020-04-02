@@ -1,0 +1,7 @@
+GET:
+positions endpoint: http://127.0.0.1:8000/api/positions/
+
+account endpoint: http://127.0.0.1:8000/api/account/
+
+POST:
+create order endpoint: http://127.0.0.1:8000/api/create_order/
