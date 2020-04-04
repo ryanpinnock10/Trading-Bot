@@ -2,7 +2,10 @@ from django.shortcuts import render
 import requests, json
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .keys import *
+from rest_framework.generics import CreateAPIView
+from ..keys import API_KEY, SECRET_KEY
+from ..models import Positions
+from .serializers import PositionSerializer
 
 
 @api_view()
@@ -24,5 +27,10 @@ def get_positions(request):
     r = requests.get(POSITIONS_URL, headers=HEADERS)
     data = json.loads(r.content)
     return Response(data)
+
+class create_order(CreateAPIView):
+    queryset = Positions.objects.all()
+    serializer_class = PositionSerializer
+
 
 
