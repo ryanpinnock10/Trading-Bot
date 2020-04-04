@@ -1,6 +1,6 @@
 from django.urls import path, include
 from .views import get_account, get_positions
-import views
+from . import views
 
 
 urlpatterns = [
