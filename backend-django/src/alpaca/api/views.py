@@ -4,8 +4,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.generics import CreateAPIView
 from ..keys import API_KEY, SECRET_KEY
-from ..models import Positions
-from .serializers import PositionSerializer
 
 
 @api_view()
@@ -28,9 +26,13 @@ def get_positions(request):
     data = json.loads(r.content)
     return Response(data)
 
-class create_order(CreateAPIView):
-    queryset = Positions.objects.all()
-    serializer_class = PositionSerializer
+@api_view(['POST'])
+def create_order(request):
+    if request.method == 'POST':
+        data = request.data
+        print(data['symbol'])
+        return Response({"message": "Got an order", "data": request.data})
+        
 
 
 
