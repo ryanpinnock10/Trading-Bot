@@ -60,6 +60,7 @@ class Stock extends React.Component {
               type: 'bar',
               mode: 'lines+markers',
               marker: {color: 'blue'},
+              //showlegend: false,
             }
           ]}
           layout={{width: 720, height: 440, title: 'A Fancy Plot'}}
