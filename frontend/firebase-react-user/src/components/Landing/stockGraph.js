@@ -63,7 +63,7 @@ class Stock extends React.Component {
               //showlegend: false,
             }
           ]}
-          layout={{width: 720, height: 440, title: 'A Fancy Plot'}}
+          layout={{width: 720, height: 440, responsive: true, showlegend: false,title: 'Stock Plot'}}
         />
       </div>
     )
