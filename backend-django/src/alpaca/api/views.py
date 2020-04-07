@@ -26,6 +26,16 @@ def get_positions(request):
     data = json.loads(r.content)
     return Response(data)
 
+@api_view()
+def order_history(request):
+    BASE_URL = 'https://paper-api.alpaca.markets'
+    HEADERS = {"APCA-API-KEY-ID" : API_KEY, "APCA-API-SECRET-KEY" : SECRET_KEY}
+    HISTORY_URL = '{}/v2/account/activities'.format(BASE_URL)
+
+    r = requests.get(HISTORY_URL,  headers=HEADERS)
+    data = json.loads(r.content)
+    return Response(data)
+
 @api_view(['POST'])
 def create_order(request):
     if request.method == 'POST':
