@@ -11,9 +11,9 @@ order history: http://127.0.0.1:8000/api/order_history/
 create order endpoint: http://127.0.0.1:8000/api/create_order/
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
