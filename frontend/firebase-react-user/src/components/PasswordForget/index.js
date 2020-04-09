@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import Container from 'react-bootstrap/Container';
 
 const PasswordForgetPage = () => (
   <div>
@@ -67,9 +68,11 @@ class PasswordForgetFormBase extends Component {
 }
 
 const PasswordForgetLink = () => (
+  <Container>
   <p>
     <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
   </p>
+  </Container>
 );
 
 export default PasswordForgetPage;

@@ -7,8 +7,11 @@ import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+import Container from 'react-bootstrap/Container';
+
 const SignInPage = () => (
   <div>
+    <Container>
     <h1>Sign In</h1>
     <SignInForm />
     <SignInGoogle />
@@ -16,6 +19,7 @@ const SignInPage = () => (
     <SignInTwitter />
     <PasswordForgetLink />
     <SignUpLink />
+    </Container>
   </div>
 );
 
@@ -68,6 +72,7 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
+      
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
@@ -89,6 +94,7 @@ class SignInFormBase extends Component {
 
         {error && <p>{error.message}</p>}
       </form>
+      
     );
   }
 }
@@ -130,11 +136,13 @@ class SignInGoogleBase extends Component {
     const { error } = this.state;
 
     return (
+      
       <form onSubmit={this.onSubmit}>
         <button type="submit">Sign In with Google</button>
 
         {error && <p>{error.message}</p>}
       </form>
+      
     );
   }
 }
@@ -176,11 +184,13 @@ class SignInFacebookBase extends Component {
     const { error } = this.state;
 
     return (
+      
       <form onSubmit={this.onSubmit}>
         <button type="submit">Sign In with Facebook</button>
 
         {error && <p>{error.message}</p>}
       </form>
+      
     );
   }
 }
@@ -222,11 +232,13 @@ class SignInTwitterBase extends Component {
     const { error } = this.state;
 
     return (
+      
       <form onSubmit={this.onSubmit}>
         <button type="submit">Sign In with Twitter</button>
 
         {error && <p>{error.message}</p>}
       </form>
+      
     );
   }
 }

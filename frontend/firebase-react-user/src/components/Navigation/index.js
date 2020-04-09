@@ -5,7 +5,9 @@ import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
 
 const Navigation = () => (
   <AuthUserContext.Consumer>
@@ -27,7 +29,7 @@ const NavigationAuth = ({ authUser }) => (
    </Dropdown.Toggle>
 
    <Dropdown.Menu>
-     <Dropdown.Item as={Link} eventKey={"1"} to={ROUTES.LANDING} className={''}> Landing </Dropdown.Item>
+     <Dropdown.Item as={Link} eventKey={"1"} to={ROUTES.LANDING} > Landing </Dropdown.Item>
      <Dropdown.Item as={Link} eventKey={"2"} to={ROUTES.HOME}>Portfolio</Dropdown.Item>
      <Dropdown.Item as={Link} eventKey={"3"} to={ROUTES.ACCOUNT}>Account</Dropdown.Item>
      {!!authUser.roles[ROLES.ADMIN] &&(
@@ -63,14 +65,29 @@ const NavigationAuth = ({ authUser }) => (
  );
 
 const NavigationNonAuth = () => (
-    <ul>
-      <li>
-        <Link to={ROUTES.LANDING}>Landing</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-      </li>
-    </ul>
+    // <ul>
+    //   <li>
+    //     <Link to={ROUTES.LANDING}>Landing</Link>
+    //   </li>
+    //   <li>
+    //     <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+    //   </li>
+    // </ul>
+
+    <Navbar bg="light" variant="dark">
+      <Link to={ROUTES.LANDING} >
+     <Button variant="outline-primary">
+     Landing
+     </Button>
+        </Link>
+    
+      <Link to={ROUTES.SIGN_IN} >
+     <Button variant="outline-primary">
+          Sign In
+     </Button>
+      </Link>
+      </Navbar>
+      
   );
 
 export default Navigation;

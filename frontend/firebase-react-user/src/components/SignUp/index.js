@@ -5,11 +5,15 @@ import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import Container from 'react-bootstrap/Container';
 
+import '../SignIn/index.scss';
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <Container>
+    <h1 align="center" >SignUp</h1>
     <SignUpForm />
+    </Container>
   </div>
 );
 
