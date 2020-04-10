@@ -9,7 +9,8 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Portfolio';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
