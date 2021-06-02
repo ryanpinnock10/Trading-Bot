@@ -21,6 +21,6 @@ requests==2.23.0
 responses==0.10.12
 six==1.14.0
 sqlparse==0.3.1
-urllib3==1.25.8
+urllib3==1.26.5
 virtualenv==20.0.13
 wrapt==1.11.2
